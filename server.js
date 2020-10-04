@@ -9,27 +9,11 @@ app.get('/hello', (req, res) => {
 });
 
 
-const budget = {
-    myBudget: [
-        {
-            title: 'Eat out',
-            budget: 30
-        },
-        {
-            title: 'Rent',
-            budget: 3500
-        },
-        {
-            title: 'Grocery',
-            budget: 90
-        },
-    ]
-};
+var json = require('./db.json');
 
 app.get('/budget', (req, res) => {
-    res.json(budget);
+    res.json(json);
 });
-
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
